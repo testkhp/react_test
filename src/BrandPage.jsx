@@ -39,7 +39,7 @@ const BrandPage = () => {
           브라우저가 비디오를 지원하지 않습니다.
         </video>
         <div className="overlay-text">
-          <h1>지구를 구하는 단단한 고집</h1>
+          <h1>우주를 구하는 단단한 고집</h1>
         </div>
       </div>
 
