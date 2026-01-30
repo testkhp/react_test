@@ -1,0 +1,332 @@
+/* ======================================================
+   [1] PC 공통 스타일
+   ====================================================== */
+.main-header {
+  position: fixed;
+  top: 40px;
+  width: 100%;
+  height: 80px;
+  background-color: #f8f7f2;
+  border-bottom: 1px solid #e0e0d0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10% !important;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #2d5a27;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 22px;
+  white-space: nowrap;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 12px;
+}
+
+.nav {
+  display: flex !important;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #555 !important;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 25px !important;
+  white-space: nowrap;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  /* 부드러운 전환 효과 */
+}
+
+.nav a:hover {
+  color: #79a184 !important;
+  /* 마우스 올리면 브랜드 컬러(초록색)로 변경 */
+  background-color: rgba(45, 90, 39, 0.05);
+  /* 은은한 배경색 추가 (선택사항) */
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.nav a.active {
+  color: #2d5a27 !important; /* 브랜드 초록색 */
+  background-color: rgba(45, 90, 39, 0.08) !important; /* 호버보다 살짝 더 짙은 배경 */
+  font-weight: 800 !important; /* 글자 두껍게 */
+  border-radius: 4px;
+}
+
+/* 기본적으로 사이드바 관련 요소 숨김 */
+.hamburger,
+.sidebar-header,
+.sidebar-footer-wrapper {
+  display: none !important;
+}
+
+/* [2] 중간 구간 (글자 크기 조정으로 버티기) */
+@media (max-width: 1100px) {
+  .main-header {
+    padding: 0 5% !important;
+  }
+
+  .nav a {
+    padding: 10px 10px !important;
+    font-size: 14px;
+  }
+}
+
+/* ======================================================
+   [3] 모바일 및 사이드바 통합 수정 (768px 이하)
+   ====================================================== */
+@media (max-width: 768px) {
+  .main-header {
+    top: 0 !important;
+    height: 70px;
+    background-color: #2e5c38 !important;
+    /* 모바일 헤더 초록색 */
+    justify-content: center !important;
+    padding: 0 20px !important;
+  }
+
+  /* 햄버거 버튼 스타일 */
+  .hamburger {
+    display: flex !important;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 18px;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 3001;
+  }
+
+  .hamburger .bar {
+    height: 2px;
+    width: 100%;
+    background-color: #ffffff !important;
+    transition: 0.3s;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* 헤더 로고 흰색 반전 */
+  .logo img {
+    height: 28px !important;
+    filter: brightness(0) invert(1);
+    margin-right: 8px !important;
+  }
+
+  .logo a strong {
+    color: #ffffff !important;
+    font-size: 18px !important;
+  }
+
+  /* -------------------------------------------------- */
+  /* [핵심] 사이드바 본체 (nav) */
+  /* -------------------------------------------------- */
+  .nav {
+    position: fixed !important;
+    right: -100% !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background-color: #2e5c38 !important;
+    flex-direction: column !important;
+    transition: 0.4s ease-in-out;
+    z-index: 2500;
+    display: flex !important;
+    padding: 0 !important;
+    overflow-y: auto !important;
+    /* 스크롤 가능하게 유지 */
+    overflow-x: hidden;
+    text-align: center;
+
+    /* ★ 스크롤바 숨기기 (IE, 파이어폭스) ★ */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* ★ 스크롤바 숨기기 (크롬, 사파리) ★ */
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav.open {
+    right: 0 !important;
+  }
+
+  /* 사이드바 내부 상단 헤더 */
+  .sidebar-header {
+    display: flex !important;
+    width: 100% !important;
+    height: 70px !important;
+    min-height: 70px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #2e5c38 !important;
+    flex-shrink: 0;
+  }
+
+  .sidebar-logo-row {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .sidebar-logo-row img {
+    height: 28px !important;
+    filter: brightness(0) invert(1);
+    margin-right: 8px !important;
+  }
+
+  .sidebar-logo-row strong {
+    color: #fff !important;
+    font-size: 18px !important;
+  }
+
+  /* 사이드바 중앙 메뉴 영역 */
+  .menu-links {
+    background-color: #f8f7f2 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 10px 0 !important;
+    flex-shrink: 0;
+  }
+
+  .menu-links a {
+    display: block !important;
+    padding: 20px 0 !important;
+    color: #333 !important;
+    font-size: 17px !important;
+    text-align: center !important;
+    border-bottom: 1px solid #e0e0d0 !important;
+    text-decoration: none !important;
+  }
+
+  /* 사이드바 하단 푸터 (모바일 푸터와 동일화) */
+  .sidebar-footer-wrapper {
+    display: block !important;
+    padding: 40px 25px 80px 25px !important;
+    background-color: #2e5c38 !important;
+    color: #ffffff !important;
+    text-align: left !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .sidebar-slogan {
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .sidebar-archiving {
+    font-size: 15px;
+    text-decoration: underline;
+    margin-bottom: 40px;
+  }
+
+  .sidebar-service-menu {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 35px !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+    gap: 40px !important;
+    /* 간격 유지 */
+    flex-wrap: wrap !important;
+  }
+
+  .sidebar-service-menu span {
+    font-size: 13px !important;
+    color: #ffffff !important;
+    opacity: 0.8 !important;
+    white-space: nowrap !important;
+    cursor: pointer;
+    /* flex: none도 기본값이므로 굳이 안 써도 gap은 잘 작동합니다 */
+  }
+
+  .sidebar-company-details p {
+    font-size: 11px;
+    line-height: 1.8;
+    opacity: 0.6;
+    margin: 3px 0;
+  }
+
+  .sidebar-copyright-text {
+    margin-top: 25px;
+    opacity: 0.4;
+    font-size: 10px;
+  }
+
+  /* 하단 로고 & SNS (가로 정렬) */
+  .sidebar-bottom-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-top: 30px !important;
+    padding-top: 25px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+    width: 100% !important;
+  }
+
+  .sidebar-footer-brand {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .sidebar-footer-brand img {
+    height: 28px;
+    filter: brightness(0) invert(1);
+    margin-right: 8px;
+  }
+
+  .sidebar-footer-brand span {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .sidebar-sns-icons-group {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+  }
+
+  .sns-icon-circle {
+    width: 36px !important;
+    height: 36px !important;
+    background-color: #79a184 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: #2e5c38 !important;
+    font-size: 18px !important;
+    flex-shrink: 0 !important;
+  }
+}

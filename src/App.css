@@ -1,0 +1,154 @@
+/* [1] 공통 변수 설정 */
+:root {
+  --dong-green: #2d5a27;
+  --border-green: #82be90;
+  --bg-gray: #f4f4f4;
+  --bg-light: #fcfcfc;
+  --text-dark: #333;
+  --point-pink: #ff4d94;
+  --footer-bg: #2d5a27;
+  --point-brick: #a64d3b;
+  --bg-sage: #e9f0e8;
+}
+
+/* [2] 브라우저 초기화 및 리액트 루트 해제 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left;
+}
+
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+/* [3] 공통 레이아웃 요소 */
+main {
+  width: 100%;
+  /* 티커(40px) + 헤더(80px) = 120px 기본 여백 */
+  padding-top: 120px;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+/* [4] 전역 반응형 설정 (Breakpoints) */
+
+/* --- 태블릿 구간 (1024px 이하) --- */
+@media (max-width: 1024px) {
+  .container,
+  .products-inner,
+  #section-report .container {
+    max-width: 95%; /* 전체적인 좌우 여백 확보 */
+  }
+
+  /* 그리드 요소들 자동 최적화 */
+  .best-grid,
+  .tab-content-main,
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px;
+  }
+}
+
+/* --- 모바일 전환 구간 (768px 이하) --- */
+@media (max-width: 768px) {
+  main {
+    padding-top: 150px; /* 모바일에서 길어지는 헤더에 맞춰 본문 더 내림 */
+  }
+
+  /* 가로 배치를 세로로 강제 전환 */
+  .content-row,
+  .artist-row,
+  .craft-row,
+  .section-header-flex,
+  .footer-container {
+    flex-direction: column !important;
+    text-align: center;
+    align-items: center;
+  }
+
+  /* 텍스트 크기 일괄 조정 */
+  h2 {
+    font-size: 24px !important;
+  }
+  h3 {
+    font-size: 20px !important;
+  }
+  p {
+    font-size: 15px !important;
+  }
+
+  /* 그리드를 1단으로 변경 */
+  .best-grid,
+  .tab-content-main,
+  .stats-grid,
+  .card-wrapper,
+  .report-grid,
+  .news-grid-p5 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* --- 초소형 모바일 (480px 이하) --- */
+@media (max-width: 480px) {
+  main {
+    padding-top: 140px;
+  }
+
+  .intro-box {
+    padding: 30px 15px;
+  }
+
+  .cta-btn {
+    width: 100%;
+    padding: 15px 0;
+  }
+}
+
+/* [5] 공통 애니메이션 클래스 */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
+
+.reveal-item.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* App.css 맨 아래에 추가 */
+@media (max-width: 768px) {
+  /* 모바일에서 상단 티커 배너 숨기기 */
+  .top-event-banner {
+    display: none !important;
+  }
+
+  /* 본문 상단 여백을 모바일 헤더 높이(70px)에 맞춤 */
+  main {
+    padding-top: 70px !important;
+  }
+}

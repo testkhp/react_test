@@ -1,0 +1,152 @@
+/* src/ZeroWaste.css */
+.zerowaste-page-wrapper {
+  width: 100%;
+  background-color: #fff;
+}
+
+.zw-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.zw-hero-banner {
+  height: 283px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url('/public/img/banner_3.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.zw-section {
+  margin-bottom: 100px;
+}
+
+.zw-section h2{
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--dong-green);
+}
+
+/* 이미지 3번: 섹션 헤더 가이드 (1200 x 45) 반영 */
+.zw-section-header {
+  width: 1200px;
+  height: 45px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #444;
+  border-bottom: 1px solid #e0e0d0;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* 이미지 6번: 회색 슬로건 배너 (996 x 60) 반영 */
+.zw-badge-banner {
+  background-color: #ecf2ec;
+  width: 996px;
+  height: 60px;
+  margin: 0 auto 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+.zw-badge-banner p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* 이미지 11번: 이미지 영역 가이드 (782 x 383) 비율 반영 */
+.zw-stat-row {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.zw-flex-item {
+  flex: 1;
+  text-align: center;
+}
+
+.zw-image-container {
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.zw-stat-img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.zw-stat-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.zw-stat-desc {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* 이미지 4번 & 5번: 요약 카드 (1200 x 262) 반영 */
+.zw-summary-card {
+  width: 1200px;
+  height: 262px;
+  background-color: #82be90;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.zw-summary-count {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2d5a27;
+  margin: 10px 0;
+}
+
+.zw-summary-text {
+  color: #333;
+  font-weight: 400;
+  text-align: center;
+}
+
+.text-point {
+  color: #a64d3b;
+}
+
+.text-green {
+  color: #2d5a27;
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+  font-weight: 500;
+}
+
+.reveal-item.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}

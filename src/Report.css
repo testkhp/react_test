@@ -1,0 +1,431 @@
+/* --- [1] 데스크탑 안정 버전 (기본값) --- */
+.report-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0px 20px 60px 20px;
+}
+
+.title-area {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.title-area h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #333;
+  line-height: 1.3;
+}
+
+.btn-main {
+  background: #1a3321;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-size: 13px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-main:hover {
+  background: #2d4a36;
+  transform: translateY(-2px);
+}
+
+/* 숫자로 보는 동구밭 그리드 (PC용 안정 레이아웃) */
+.section-header {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 100px;
+  align-items: flex-start;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  flex-grow: 1;
+  grid-template-areas:
+    'c1 c1 c2 c2'
+    'c1 c1 c3 c4'
+    'c5 c6 c7 c7';
+}
+
+.stat-box {
+  background: #f1f3ef;
+  border-radius: 12px;
+  padding: 25px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  color: #35503b;
+}
+
+.stat-box .num {
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.stat-box .num span {
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+.stat-box .label {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  word-break: keep-all;
+  line-height: 1.5;
+}
+
+.stat-box .desc {
+  font-size: 15px;
+  font-weight: 500;
+  /* opacity: 0.8; */
+  margin-top: auto;
+  word-break: keep-all;
+  line-height: 1.6;
+}
+
+.card-1 {
+  grid-area: c1;
+  min-height: 380px;
+}
+.card-2 {
+  grid-area: c2;
+}
+.card-3 {
+  grid-area: c3;
+}
+.card-4 {
+  grid-area: c4;
+}
+.card-5 {
+  grid-area: c5;
+}
+.card-6 {
+  grid-area: c6;
+}
+.card-7 {
+  grid-area: c7;
+  min-height: 150px;
+}
+
+/* 호버 효과 */
+.card-1:hover {
+  background-color: #3d5a36 !important;
+}
+.card-2:hover {
+  background-color: #a05e4f !important;
+}
+.card-3:hover {
+  background-color: #e99c82 !important;
+}
+.card-4:hover {
+  background-color: #cdb9ae !important;
+}
+.card-5:hover {
+  background-color: #5d6d56 !important;
+}
+.card-6:hover {
+  background-color: #c4d693 !important;
+}
+.card-7:hover {
+  background-color: #9ab999 !important;
+}
+.stat-box:hover * {
+  color: #fff !important;
+}
+
+/* 브랜드 스토리 카드 (PC) */
+.story-section {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  flex-grow: 1;
+}
+.story-card {
+  border-radius: 15px;
+  padding: 40px 30px;
+  color: white;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.story-card:hover {
+  transform: translateY(-10px);
+}
+.story-card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.story-card p {
+  font-size: 15px;
+  opacity: 0.9;
+  flex-grow: 1;
+}
+.bg-v {
+  background-color: #79b38b;
+}
+.bg-a {
+  background-color: #e5d9c6;
+  color: #555 !important;
+}
+.bg-r {
+  background-color: #eeb094;
+}
+
+/* --- 리포트 상세 섹션 --- */
+.report-detail-section {
+  margin-top: 10px;
+  padding-top: 40px;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.report-title {
+  margin-bottom: 20px;
+}
+.report-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.report-box {
+  border-radius: 20px;
+  padding: 30px 25px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+}
+.report-box.gold {
+  background-color: #d8cd9e;
+  color: #35503b;
+}
+.report-box.brown {
+  background-color: #ada786;
+  color: #fff;
+}
+.report-box.light-gold {
+  height: 421px;
+  background-color: #f6f3e1;
+  color: #35503b;
+}
+.subject {
+  font-size: 30px;
+}
+.k {
+  margin-bottom: 60px;
+  margin-top: 30px;
+}
+.report-box.mint {
+  background-color: #d1e8cc;
+  color: #35503b;
+}
+.report-box.water-save {
+  background-color: #c4d693;
+  color: #35503b;
+}
+.report-box .value {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.image-placeholder {
+  height: 421px;
+  border-radius: 20px;
+  min-height: 220px;
+  overflow: hidden;
+}
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.report-footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.update-date {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 25px;
+}
+.btn-back {
+  background: #fff;
+  color: #1a3321;
+  border: 1.5px solid #1a3321;
+  padding: 12px 35px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-back:hover {
+  background: #1a3321;
+  color: #fff;
+}
+
+/* ======================================================
+   뉴스 슬라이더 섹션 (수정 및 추가된 부분)
+   ====================================================== */
+.news-section {
+  margin-top: 120px; /* 섹션 간 간격 확보 */
+  padding: 40px 0;
+  width: 100%;
+}
+
+/* 기존 뉴스 박스의 테두리를 제거하여 슬라이더가 돋보이게 함 */
+.news-box {
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* 슬라이더 내 하단 점(Pagination) 색상 변경 */
+.swiper-pagination-bullet-active {
+  background: #1a3321 !important; /* 동구밭 메인 컬러로 통일 */
+}
+
+/* --- [2] 모바일 최적화 (768px 이하) --- */
+@media (max-width: 768px) {
+  .report-container {
+    padding: 0px 15px 40px 15px;
+  }
+  .section-header {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+  .title-area {
+    width: 100% !important;
+  }
+  .title-area h2 {
+    font-size: 22px;
+    color: #1a3321;
+  }
+
+  .stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-areas: none !important;
+    gap: 12px !important;
+  }
+  .stat-box {
+    grid-area: auto !important;
+    min-height: 160px !important;
+    padding: 20px !important;
+    text-align: left;
+  }
+
+  /* 카드 순서 조정 */
+  .card-1 {
+    grid-column: span 2 !important;
+    order: 1;
+  }
+  .card-5 {
+    grid-column: span 1 !important;
+    order: 2;
+  }
+  .card-6 {
+    grid-column: span 1 !important;
+    order: 3;
+  }
+  .card-2 {
+    grid-column: span 2 !important;
+    order: 4;
+  }
+  .card-3 {
+    grid-column: span 1 !important;
+    order: 5;
+  }
+  .card-4 {
+    grid-column: span 1 !important;
+    order: 6;
+  }
+  .card-7 {
+    grid-column: span 2 !important;
+    order: 7;
+  }
+
+  .story-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* 브랜드 스토리 섹션의 제목 구역을 중앙으로 */
+  .story-section .title-area {
+    width: 100% !important; /* 너비를 전체로 확장 */
+    text-align: center !important; /* 글자를 중앙 정렬 */
+    margin-bottom: 30px; /* 카드와의 간격 */
+  }
+
+  /* 브랜드 스토리의 버튼도 중앙으로 */
+  .story-section .title-area .btn-main {
+    margin: 0 auto !important; /* 좌우 여백을 자동으로 두어 중앙 배치 */
+    display: block !important; /* 버튼을 한 줄을 다 차지하는 블록으로 변경 */
+    width: fit-content; /* 버튼 글자 크기에 딱 맞춤 */
+  }
+
+  /* 뉴스 섹션 제목을 중앙으로 */
+  .news-section h2 {
+    text-align: center !important; /* 왼쪽 정렬을 해제하고 중앙으로 */
+    width: 100%;
+  }
+
+  .card-wrapper {
+    grid-template-columns: 1fr !important;
+  }
+  .report-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px;
+  }
+  .report-box .value {
+    font-size: 26px;
+  }
+  .image-placeholder {
+    height: 160px;
+    min-height: auto;
+  }
+
+  /* 모바일에서 슬라이더 간격 조정 */
+  .news-section {
+    margin-top: 60px;
+  }
+}
